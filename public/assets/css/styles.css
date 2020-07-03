@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: "Arial";
+  font-weight: 600;
+  background-color: whitesmoke;
+}
+
+.light {
+  background-color: whitesmoke;
+}
+.dark {
+  color: whitesmoke;
+  background-color: #333;
+}
+.redlista {
+  color: #ff3b3b;
+}
+.bluelista {
+  color: rgb(85, 85, 250);
+}

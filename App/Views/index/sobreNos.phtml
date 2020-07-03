@@ -1,0 +1,16 @@
+<h1>Sobre Nozes</h1>
+<h2>Informações</h2>
+<table class="table">
+<tr scope="row">
+  <th>Titulo</th>
+  <th>Descrição</th>
+</tr>
+<?php
+foreach($this->view->dados as $key => $info) {  
+  echo "<tr>";
+  echo "<th scope='row'>".$info['titulo']." </th>";
+  echo "<td>".$info['descricao']." </td>";
+  echo "</tr>";
+}
+?>
+</table>
