@@ -31,7 +31,7 @@ abstract class Bootstrap {
       // compara a rota acessada no index.php, com todas as $routes do atributo da classe.
       // caso encontre
       if($url == $route['route']) {
-        // seta a classe do controller responsavel pela rota, pelo namespace
+        // seta a classe do controller responsavel pela rota, atraves do namespace
         $class = "App\\Controllers\\".ucfirst($route['controller']);
         // cria uma instancia dessa classe
         // $controller = new App\Controllers\IndexController;

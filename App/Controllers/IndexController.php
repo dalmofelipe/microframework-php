@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Controllers;
+session_start();
 
 use MF\Controller\Action;
 use MF\Model\Container;
@@ -15,21 +15,31 @@ class IndexController extends Action {
     $produto = Container::getModel('Produto');
     $produtos = $produto->getProdutos();
     $this->view->dados = $produtos;
-    $this->render('index', 'layout2');
+    $this->render('index', 'layout');
   }
 
-  // action da rota: /sobre_nos
-  public function sobre_nos() {
-    $info = Container::getModel('Info');
-    $informacoes = $info->getInfo();
-    $this->view->dados = $informacoes;
-    $this->render('sobreNos', 'layout1');
+  public function micro() {
+    $this->render('micro', 'layout');
+  }
+  
+  public function dropdown() {
+    $this->render('dropdown', 'layout');
   }
 
-  public function bruxao() {
-    $this->view->dados = array('PlayStation', 'XBOX', 'MegaDriver');
-    $this->render('bruxao', 'layout1');
+  public function static() {
+    $this->render('layout-static', 'layout');
+  }
+
+  public function change_thema() {
+    $_SESSION['theme'] = $_SESSION['theme'] == 'Light' ? 'Dark' : 'Light';
+    
+    // echo '<pre>';
+    // print_r($_SERVER);
+    // echo '</pre>'; 
+
+    $url = $_SERVER[HTTP_REFERER];
+    header("Location: $url");
+    // $this->render('layout-sidenav-light', 'layout');
   }
 }
-
 ?>

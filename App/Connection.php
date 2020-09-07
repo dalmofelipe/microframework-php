@@ -9,7 +9,7 @@ class Connection {
       $conn = new \PDO(
         "mysql:host=localhost;dbname=mvc;charset=utf8",
         "root",
-        ""
+        "123456"
       );
       return $conn;
     } catch(\PDOException $e) {
